@@ -17,6 +17,10 @@ export default function Hero() {
         </p>
         <div className="hero__cta">
           <a className="btn btn--gold btn--lg" href="#games">Browse games</a>
+          <a className="btn btn--outline btn--lg" href="#download">
+            <Icon d={PATHS.download} size={20} width={2} />
+            Download app
+          </a>
           <a className="btn btn--outline btn--lg" href={LINKS.telegram} target="_blank" rel="noopener noreferrer">
             <Icon d={PATHS.telegram} size={20} width={2} />
             Join Telegram

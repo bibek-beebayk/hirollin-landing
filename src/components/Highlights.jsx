@@ -1,11 +1,26 @@
 import Icon, { PATHS } from './Icon'
 
-// Replace the bracketed placeholders with real, verifiable points.
 const ITEMS = [
-  { icon: PATHS.bolt, text: 'Instant-play games' },
-  { icon: PATHS.shield, text: '[YOUR TRUST POINT]' },
-  { icon: PATHS.people, text: 'Active community' },
-  { icon: PATHS.clock, text: '[YOUR SUPPORT HOURS]' },
+  {
+    icon: PATHS.dice,
+    title: 'Play like a real casino',
+    text: 'Real casino-style games and the full table experience.',
+  },
+  {
+    icon: PATHS.wallet,
+    title: 'Automated payments',
+    text: 'Deposits and withdrawals are handled by our automated payment system.',
+  },
+  {
+    icon: PATHS.userCheck,
+    title: 'No agent needed',
+    text: 'Play and cash out directly, with nobody in the middle.',
+  },
+  {
+    icon: PATHS.clock,
+    title: '24x7 Support',
+    text: 'Help is available around the clock whenever you need it.',
+  },
 ]
 
 export default function Highlights() {
@@ -13,9 +28,14 @@ export default function Highlights() {
     <section className="highlights" aria-label="Highlights">
       <div className="container highlights__inner">
         {ITEMS.map((item) => (
-          <div className="highlights__item" key={item.text}>
-            <Icon d={item.icon} />
-            {item.text}
+          <div className="highlights__item" key={item.title}>
+            <span className="highlights__icon">
+              <Icon d={item.icon} size={24} />
+            </span>
+            <div className="highlights__copy">
+              <strong className="highlights__title">{item.title}</strong>
+              <p className="highlights__text">{item.text}</p>
+            </div>
           </div>
         ))}
       </div>

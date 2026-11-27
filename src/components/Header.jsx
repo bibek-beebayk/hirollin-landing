@@ -26,6 +26,7 @@ export default function Header() {
 
         <nav id="main-nav" className={`header__nav${open ? ' is-open' : ''}`} aria-label="Main">
           <a href="#games" onClick={close}>Games</a>
+          <a href="#download" onClick={close}>Download</a>
           <a href="#community" onClick={close}>Community</a>
           <a className="btn btn--gold btn--sm" href={LINKS.play} onClick={close}>Play now</a>
         </nav>

@@ -1,8 +1,10 @@
 // Edit these before launch. Everything on the page that links out reads from here.
 export const LINKS = {
-  telegram: 'https://t.me/your_handle', // TODO: your Telegram link
-  community: 'https://community.example.com', // TODO: your Rollin community link
-  play: 'https://play.example.com', // TODO: where "Play now" should go
+  telegram: 'https://t.me/HiRollin_Support', // TODO: your Telegram link
+  community: 'https://community.hrlzone.com', // TODO: your Rollin community link
+  play: 'https://demo.hi-rollin.online', // TODO: where "Play now" should go
+  android: 'https://download.example.com/hi-rollin.apk', // TODO: your Android APK link
+  ios: '', // Leave empty to show "iOS: coming soon"
   terms: '#',
   responsibleGaming: '#',
 }

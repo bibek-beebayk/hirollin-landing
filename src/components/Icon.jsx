@@ -26,4 +26,8 @@ export const PATHS = {
   telegram: 'M21 4L3 11l6 2.5L11.5 20 14 15l5 3.5L21 4z',
   menu: 'M4 7h16 M4 12h16 M4 17h16',
   close: 'M6 6l12 12 M18 6L6 18',
+  dice: 'M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z M8 8h.01 M16 8h.01 M12 12h.01 M8 16h.01 M16 16h.01',
+  wallet: 'M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v2h-5a3 3 0 0 0 0 6h5v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z M15 12h6',
+  userCheck: 'M14 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0z M3 20c0-3.6 3.1-6 7-6s7 2.4 7 6 M16 11l2 2 4-4',
+  download: 'M12 3v12 M7 10l5 5 5-5 M4 19h16',
 }
