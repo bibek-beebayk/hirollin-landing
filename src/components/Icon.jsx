@@ -30,4 +30,6 @@ export const PATHS = {
   wallet: 'M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v2h-5a3 3 0 0 0 0 6h5v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z M15 12h6',
   userCheck: 'M14 8a4 4 0 1 0-8 0 4 4 0 0 0 8 0z M3 20c0-3.6 3.1-6 7-6s7 2.4 7 6 M16 11l2 2 4-4',
   download: 'M12 3v12 M7 10l5 5 5-5 M4 19h16',
+  chevronLeft: 'M15 6l-6 6 6 6',
+  chevronRight: 'M9 6l6 6-6 6',
 }
