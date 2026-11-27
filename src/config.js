@@ -2,9 +2,10 @@
 export const LINKS = {
   telegram: 'https://t.me/HiRollin_Support', // TODO: your Telegram link
   community: 'https://community.hrlzone.com', // TODO: your Rollin community link
-  play: 'https://demo.hi-rollin.online', // TODO: where "Play now" should go
-  android: 'https://download.example.com/hi-rollin.apk', // TODO: your Android APK link
-  ios: '', // Leave empty to show "iOS: coming soon"
+  play: 'https://play.hi-rollin.online', // TODO: where "Play now" should go
+  android: 'https://hi-rollin.online/android',
+  ios: 'https://hi-rollin.online/ios',
+  web: 'https://play.hi-rollin.online/',
   terms: '#',
   responsibleGaming: '#',
 }

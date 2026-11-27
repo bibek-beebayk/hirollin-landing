@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { CATEGORIES, GAMES } from '../data/games'
 import { LINKS } from '../config'
-import Icon from './Icon'
 
 export default function Games() {
   const [cat, setCat] = useState('All')
@@ -32,14 +31,20 @@ export default function Games() {
       <div className="games">
         {list.map((g) => (
           <article className="card" key={g.id}>
-            <div className="card__art" style={{ background: g.art }}>
+            <div className="card__art">
               <span className="card__tag">{g.cat}</span>
-              <Icon d={g.icon} size={84} stroke="#ffe9a0" width={1.4} />
+              <img
+                className="card__img"
+                src={g.image}
+                alt={g.name}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="card__body">
               <h3 className="card__title">{g.name}</h3>
-              <p className="card__text">{g.desc}</p>
-              <a className="btn btn--outline btn--sm btn--block" href={LINKS.play}>Play now</a>
+              {g.desc && <p className="card__text">{g.desc}</p>}
+              <a className="btn btn--outline btn--sm btn--block" href={LINKS.play} target="_blank" rel="noopener noreferrer">Play now</a>
             </div>
           </article>
         ))}

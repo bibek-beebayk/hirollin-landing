@@ -182,7 +182,8 @@ p {
   padding: 12px 0;
 }
 
-.header__nav a:not(.btn):hover {
+.header__nav a:not(.btn):hover,
+.header__nav a:not(.btn).is-active {
   color: var(--gold-300);
 }
 
@@ -414,8 +415,8 @@ p {
 
 .games {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .card {
@@ -436,21 +437,33 @@ p {
 
 .card__art {
   position: relative;
-  height: 170px;
+  aspect-ratio: 3 / 4.8;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(ellipse at center, #2d1052 0%, #140724 100%);
+  padding: 8px;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .card__tag {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 5px 12px;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(18, 6, 31, 0.7);
+  background: rgba(18, 6, 31, 0.82);
+  border: 1px solid rgba(240, 193, 75, 0.35);
   color: var(--gold-300);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -458,14 +471,15 @@ p {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 20px 20px 22px;
+  padding: 14px 16px 16px;
   flex: 1;
 }
 
 .card__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 21px;
+  font-size: 18px;
+  line-height: 1.25;
   color: var(--gold-100);
 }
 
@@ -481,7 +495,7 @@ p {
 }
 
 .card__body .btn {
-  margin-top: 6px;
+  margin-top: auto;
 }
 
 /* ---------- Download ---------- */
@@ -640,6 +654,71 @@ p {
   background: rgba(246, 215, 122, 0.45);
 }
 
+/* ---------- Download Page ---------- */
+.download-hero {
+  padding-top: 44px;
+  padding-bottom: 16px;
+}
+
+.download-hero__title {
+  font-size: clamp(36px, 5vw, 60px);
+}
+
+.guides {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 32px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #2b0f4e 0%, #190830 100%);
+  border: 1px solid rgba(240, 193, 75, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.guide-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.guide-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 193, 75, 0.45);
+  background: rgba(240, 193, 75, 0.1);
+  color: var(--gold-300);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.guide-card__list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  flex: 1;
+}
+
+.guide-card__list strong {
+  color: var(--text);
+}
+
 /* ---------- Community ---------- */
 .community {
   display: flex;
@@ -674,6 +753,18 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.community__icon--logo {
+  width: auto;
+  border-radius: 0;
+}
+
+.community__icon-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
 }
 
 .community__icon--gold {
@@ -756,15 +847,29 @@ p {
 @media (max-width: 860px) {
   .hero {
     flex-direction: column;
-    text-align: left;
-    gap: 32px;
-    padding-top: 32px;
-    padding-bottom: 56px;
+    text-align: center;
+    gap: 24px;
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .hero__copy {
+    align-items: center;
+  }
+
+  .hero__cta {
+    justify-content: center;
   }
 
   .hero__art {
+    order: -1;
     width: 100%;
     flex: none;
+    padding: 12px 24px;
+  }
+
+  .hero__art img {
+    max-width: 280px;
   }
 
   .section {
@@ -780,6 +885,10 @@ p {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 36px 28px;
+  }
+
+  .guides {
+    grid-template-columns: 1fr;
   }
 
   .header__toggle {
@@ -820,12 +929,67 @@ p {
   }
 
   .hero {
-    padding-top: 28px;
-    padding-bottom: 48px;
-    gap: 28px;
+    padding-top: 20px;
+    padding-bottom: 36px;
+    gap: 16px;
   }
 
-  .hero__cta .btn {
+  .hero__copy {
+    gap: 14px;
+  }
+
+  .hero .pill {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .hero__title {
+    font-size: clamp(30px, 8.6vw, 40px);
+    line-height: 1.08;
+  }
+
+  .hero__text {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 340px;
+  }
+
+  .hero__art {
+    padding: 6px 16px;
+  }
+
+  .hero__art img {
+    max-width: 196px;
+  }
+
+  .hero .hero__cta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .hero .hero__cta .btn {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 12px;
+    font-size: 14px;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .hero .hero__cta .btn:first-child {
+    grid-column: 1 / -1;
+    min-height: 50px;
+    font-size: 16px;
+  }
+
+  .final .hero__cta {
+    width: 100%;
+  }
+
+  .final .hero__cta .btn {
     width: 100%;
   }
 
@@ -873,6 +1037,19 @@ p {
     width: 206px;
   }
 
+  .download-hero {
+    padding-top: 24px;
+  }
+
+  .guide-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .guide-card .btn {
+    width: 100%;
+  }
+
   .tabs {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -892,14 +1069,12 @@ p {
   }
 
   .games {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
   .card {
-    flex-direction: row;
-    align-items: stretch;
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   .card:hover {
@@ -907,55 +1082,32 @@ p {
   }
 
   .card__art {
-    flex: 0 0 104px;
-    width: 104px;
-    height: auto;
-    min-height: 104px;
-  }
-
-  .card__art svg {
-    width: 48px;
-    height: 48px;
+    padding: 6px;
   }
 
   .card__tag {
-    top: auto;
-    bottom: 8px;
+    top: 8px;
     left: 8px;
     font-size: 11px;
     padding: 3px 8px;
   }
 
   .card__body {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 16px;
-    gap: 6px;
-    justify-content: center;
+    padding: 10px 12px 12px;
+    gap: 8px;
   }
 
   .card__title {
-    font-size: 17px;
+    font-size: 15px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .card__text {
-    font-size: 13px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    flex: 0 0 auto;
-  }
-
   .card__body .btn {
-    width: auto;
-    align-self: flex-start;
     min-height: 44px;
-    padding: 0 20px;
-    margin-top: 4px;
+    padding: 0 12px;
+    font-size: 14px;
   }
 
   .community__card {

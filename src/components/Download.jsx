@@ -4,6 +4,7 @@ import Icon, { PATHS } from './Icon'
 export default function Download() {
   const hasAndroid = Boolean(LINKS.android && LINKS.android.trim())
   const hasIos = Boolean(LINKS.ios && LINKS.ios.trim())
+  const hasWeb = Boolean(LINKS.web && LINKS.web.trim())
 
   return (
     <section id="download" className="container section">
@@ -17,7 +18,7 @@ export default function Download() {
 
           <div className="download__actions">
             {hasAndroid ? (
-              <a className="btn btn--gold" href={LINKS.android}>
+              <a className="btn btn--gold" href={LINKS.android} target="_blank" rel="noopener noreferrer">
                 <Icon d={PATHS.download} size={20} width={2} />
                 Download for Android
               </a>
@@ -28,7 +29,7 @@ export default function Download() {
             )}
 
             {hasIos ? (
-              <a className="btn btn--outline" href={LINKS.ios}>
+              <a className="btn btn--outline" href={LINKS.ios} target="_blank" rel="noopener noreferrer">
                 <Icon d={PATHS.download} size={20} width={2} />
                 Download for iOS
               </a>
@@ -36,6 +37,12 @@ export default function Download() {
               <button type="button" className="btn btn--outline" disabled>
                 iOS: coming soon
               </button>
+            )}
+
+            {hasWeb && (
+              <a className="btn btn--outline" href={LINKS.web} target="_blank" rel="noopener noreferrer">
+                Play on Web
+              </a>
             )}
           </div>
 

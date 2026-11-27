@@ -13,11 +13,11 @@ export default function Hero() {
           Roll big.<br />Play like royalty.
         </h1>
         <p className="hero__text">
-          Dice, cards, crash and more, all in one place. Jump into a game, then bring your luck to the Rollin community.
+          Spin top slots, hunt big catches in fishing games and try more favorites, all in one place. No agents, no middlemen: just you and the game.
         </p>
         <div className="hero__cta">
           <a className="btn btn--gold btn--lg" href="#games">Browse games</a>
-          <a className="btn btn--outline btn--lg" href="#download">
+          <a className="btn btn--outline btn--lg" href="/download/">
             <Icon d={PATHS.download} size={20} width={2} />
             Download app
           </a>

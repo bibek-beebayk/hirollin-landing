@@ -1,15 +1,16 @@
 import { LINKS, SITE } from '../config'
 
-export default function Footer() {
+export default function Footer({ isSubpage = false }) {
   return (
     <footer className="footer">
       <div className="container footer__inner">
         <img src="/logo.png" alt="Hi-Rollin" className="footer__logo" />
         <nav className="footer__nav" aria-label="Footer">
-          <a href="#games">Games</a>
-          <a href="#community">Community</a>
-          <a href={LINKS.terms}>Terms</a>
-          <a href={LINKS.responsibleGaming}>Responsible gaming</a>
+          <a href={isSubpage ? '/#games' : '#games'}>Games</a>
+          <a href="/download/">Download</a>
+          <a href={isSubpage ? '/#community' : '#community'}>Community</a>
+          <a href={LINKS.terms} target="_blank" rel="noopener noreferrer">Terms</a>
+          <a href={LINKS.responsibleGaming} target="_blank" rel="noopener noreferrer">Responsible gaming</a>
         </nav>
       </div>
       <div className="container">

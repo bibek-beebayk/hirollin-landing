@@ -25,8 +25,8 @@ export default function Community() {
         </div>
 
         <div className="community__card community__card--rollin">
-          <div className="community__icon community__icon--ruby">
-            <Icon d={PATHS.people} size={30} stroke="#fff" width={2} />
+          <div className="community__icon community__icon--logo">
+            <img src="/rollin-community.png" alt="Rollin Community" className="community__icon-img" />
           </div>
           <h3 className="card__title card__title--lg">Rollin Community</h3>
           <p className="card__text">Talk strategy, share big wins and meet the regulars.</p>

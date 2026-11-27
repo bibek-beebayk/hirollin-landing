@@ -11,6 +11,10 @@ npm run build     # production build in dist/
 npm run preview   # serve the production build
 ```
 
+## Adding a game
+
+Drop the game poster into the matching `public/games/<category>/` folder, named in lowercase kebab-case like `my-game-name.webp` (`.webp`, `.png`, `.jpg`, or `.jpeg`), then run `npm run dev` or `npm run build` (or `npm run games` directly). `src/data/games.js` is regenerated automatically from the folders on disk.
+
 ## Edit before launch
 
 - `src/config.js`: Telegram link, community link, "Play now" destination, legal note.

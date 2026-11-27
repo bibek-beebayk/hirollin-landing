@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "games": "node scripts/generate-games.mjs",
+    "predev": "npm run games",
     "dev": "vite",
+    "prebuild": "npm run games",
     "build": "vite build",
     "preview": "vite preview"
   },
